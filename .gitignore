@@ -1,0 +1,5 @@
+*.o
+convert
+shortC
+makefile2
+tempfile
