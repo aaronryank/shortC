@@ -9,17 +9,17 @@ To compile a shortC program, type `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c &
 
 Here are the conversions that shortC currently performs:
 
- - I <-> **i**nt
  - C <-> **c**har
- - V <-> **v**oid
+ - D <-> #**d**efine
  - E <-> **e**lse
  - F <-> i**f**
+ - G <-> **g**etchar
+ - H <-> switc**h**
+ - I <-> **i**nt
+ - M <-> strc**m**p
+ - O <-> f**o**r
  - P <-> **p**utchar
  - R <-> p**r**intf
- - G <-> **g**etchar
- - O <-> f**o**r
- - W <-> **w**hile
- - H <-> switc**h**
- - M <-> strc**m**p
- - D <-> #**d**efine
  - U <-> **u**sleep
+ - V <-> **v**oid
+ - W <-> **w**hile
