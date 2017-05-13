@@ -45,6 +45,8 @@ void parse_print(char *s)
         printf("#define");
     else if (!strcmp(s, "U"))
         printf("usleep");
+    else if (!strcmp(s, "L"))
+        printf("long");
     else
         printf("%s",s);
 }
@@ -103,6 +105,8 @@ void parse_print(char *s)
         putchar('D');
     else if (!strcmp(s, "usleep"))
         putchar('U');
+    else if (!strcmp(s, "long"))
+        putchar('L');
     else
         printf("%s",s);
 }

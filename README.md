@@ -16,6 +16,7 @@ Here are the conversions that shortC currently performs:
  - G <-> **g**etchar
  - H <-> switc**h**
  - I <-> **i**nt
+ - L <-> **l**ong
  - M <-> strc**m**p
  - O <-> f**o**r
  - P <-> **p**utchar
