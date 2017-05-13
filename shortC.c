@@ -47,6 +47,10 @@ void parse_print(char *s)
         printf("usleep");
     else if (!strcmp(s, "L"))
         printf("long");
+    else if (!strcmp(s, "S"))
+        printf("strlen");
+    else if (!strcmp(s, "T"))
+        printf("return");
     else
         printf("%s",s);
 }
@@ -107,6 +111,10 @@ void parse_print(char *s)
         putchar('U');
     else if (!strcmp(s, "long"))
         putchar('L');
+    else if (!strcmp(s, "strlen"))
+        putchar('S');
+    else if (!strcmp(s, "return"))
+        putchar('T');
     else
         printf("%s",s);
 }
