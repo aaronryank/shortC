@@ -7,7 +7,7 @@ To easily turn a C program into a shortC program, type `./convert <CSOURCEFILE.c
 
 To compile a shortC program, type `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c && gcc CSOURCEFILE.c`.
 
-Here are the conversions that shortC currently performs:
+Here are the conversions that shortC currently performs (and that `convert` will transform for you):
 
  - A <-> m**a**in
  - C <-> **c**har
@@ -29,6 +29,6 @@ Here are the conversions that shortC currently performs:
  - V <-> **v**oid
  - W <-> **w**hile
 
-Here are more conversions that `convert` will not transform, but the `interpreter` will:
+Here are more conversions that `convert` will not transform, but the "interpreter" will:
 
  - X -> while(1)
