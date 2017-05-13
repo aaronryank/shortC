@@ -28,3 +28,7 @@ Here are the conversions that shortC currently performs:
  - U <-> **u**sleep
  - V <-> **v**oid
  - W <-> **w**hile
+
+Here are more conversions that `convert` will not transform, but the `interpreter` will:
+
+ - X -> while(1)

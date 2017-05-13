@@ -55,6 +55,8 @@ void parse_print(char *s)
         printf("gets");
     else if (!strcmp(s, "A"))
         printf("main");
+    else if (!strcmp(s, "X"))
+        printf("while(1)");
     else
         printf("%s",s);
 }
