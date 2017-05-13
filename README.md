@@ -22,3 +22,4 @@ Here are the conversions that shortC currently performs:
  - H <-> switc**h**
  - M <-> strc**m**p
  - D <-> #**d**efine
+ - U <-> **u**sleep

@@ -43,6 +43,8 @@ void parse_print(char *s)
         printf("strcmp");
     else if (!strcmp(s, "D"))
         printf("#define");
+    else if (!strcmp(s, "U"))
+        printf("usleep");
     else
         printf("%s",s);
 }
@@ -99,6 +101,8 @@ void parse_print(char *s)
         putchar('M');
     else if (!strcmp(s, "#define"))
         putchar('D');
+    else if (!strcmp(s, "usleep"))
+        putchar('U');
     else
         printf("%s",s);
 }
