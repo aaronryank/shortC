@@ -51,6 +51,8 @@ void parse_print(char *s)
         printf("strlen");
     else if (!strcmp(s, "T"))
         printf("return");
+    else if (!strcmp(s, "Q"))
+        printf("gets");
     else
         printf("%s",s);
 }
@@ -115,6 +117,8 @@ void parse_print(char *s)
         putchar('S');
     else if (!strcmp(s, "return"))
         putchar('T');
+    else if (!strcmp(s, "gets"))
+        putchar('Q');
     else
         printf("%s",s);
 }

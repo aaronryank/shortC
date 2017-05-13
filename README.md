@@ -20,6 +20,7 @@ Here are the conversions that shortC currently performs:
  - M <-> strc**m**p
  - O <-> f**o**r
  - P <-> **p**utchar
+ - Q <-> gets
  - R <-> p**r**intf
  - S <-> **s**trlen
  - T <-> re**t**urn
