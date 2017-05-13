@@ -9,6 +9,7 @@ To compile a shortC program, type `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c &
 
 Here are the conversions that shortC currently performs:
 
+ - A <-> m**a**in
  - C <-> **c**har
  - D <-> #**d**efine
  - E <-> **e**lse

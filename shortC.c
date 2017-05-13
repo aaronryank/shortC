@@ -53,6 +53,8 @@ void parse_print(char *s)
         printf("return");
     else if (!strcmp(s, "Q"))
         printf("gets");
+    else if (!strcmp(s, "A"))
+        printf("main");
     else
         printf("%s",s);
 }
@@ -119,6 +121,8 @@ void parse_print(char *s)
         putchar('T');
     else if (!strcmp(s, "gets"))
         putchar('Q');
+    else if (!strcmp(s, "main"))
+        putchar('A');
     else
         printf("%s",s);
 }
