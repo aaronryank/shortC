@@ -127,7 +127,7 @@ void parse_print(char *s)
         putchar('Q');
     else if (!strcmp(s, "main"))
         putchar('A');
-    else if (!strcmp(s, "puts")
+    else if (!strcmp(s, "puts"))
         putchar('P');
     else
         printf("%s",s);
