@@ -16,6 +16,7 @@ Here are the conversions that shortC currently performs (and that `convert` will
  - F <-> i**f**
  - G <-> **g**etchar
  - H <-> switc**h**
+ - J <-> puts
  - I <-> **i**nt
  - L <-> **l**ong
  - M <-> strc**m**p

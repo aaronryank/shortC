@@ -57,6 +57,8 @@ void parse_print(char *s)
         printf("main");
     else if (!strcmp(s, "X"))
         printf("while(1)");
+    else if (!strcmp(s, "J"))
+        printf("puts");
     else
         printf("%s",s);
 }
@@ -125,6 +127,8 @@ void parse_print(char *s)
         putchar('Q');
     else if (!strcmp(s, "main"))
         putchar('A');
+    else if (!strcmp(s, "puts")
+        putchar('P');
     else
         printf("%s",s);
 }
