@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int curly, parens;
+/* curly-braces, parenthesis, preprocessor */
+int curly, parens, pre;
 
 struct {
     char c, *s;
@@ -42,6 +43,8 @@ void translate(char c)
                  parens++;
              else if (strchr(mapping[i].s,')'))
                  parens--;
+             else if (strchr(mapping[i].s,'#'))
+                 pre = 1;
          }
     }
 }
@@ -59,7 +62,7 @@ void autoclose(void)
 int main(void)
 {
     int c, prev, chr, str;
-    c = prev = chr = str = curly = parens = 0;
+    c = prev = chr = str = curly = parens = pre = 0;
     while ((c = getchar()) != EOF)
     {
         if (isupper(c) && !str && !chr)
@@ -78,8 +81,14 @@ int main(void)
             else if (c == '}')
                 autoclose();
 
-            if (c != '\n')
-               putchar(c);
+            if (c == '\n') {
+                if (pre) {
+                    pre = 0;
+                    putchar(c);
+                }
+            }
+            else
+                putchar(c);
         }
         prev = c;
     }
