@@ -48,8 +48,9 @@ void translate(char c)
 
 void autoclose(void)
 {
-//    while (parens--)
-//        putchar(')');
+    if (parens > 0)
+        while (parens--)
+            putchar(')');
 
     if (!--curly)
         putchar(';');
@@ -64,9 +65,9 @@ int main(void)
         if (isupper(c) && !str && !chr)
             translate(c);
         else {
-            if (c == '"' && prev != '\\')
+            if (c == '"' && prev != '\\' && !chr)
                 str = !str;
-            else if (c == '\'' && prev != '\\')
+            else if (c == '\'' && prev != '\\' && !str)
                 chr = !chr;
             else if (c == '(')
                 parens++;
@@ -76,8 +77,19 @@ int main(void)
                 curly++;
             else if (c == '}')
                 autoclose();
-            putchar(c);
+
+            if (c != '\n')
+               putchar(c);
         }
         prev = c;
     }
+
+    if (chr)
+        putchar('\'');
+    else if (str)
+        putchar('\"');
+
+    if (curly > 0)
+        while (curly)
+            autoclose(), putchar('}');
 }

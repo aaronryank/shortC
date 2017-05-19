@@ -14,8 +14,8 @@ Here are the conversions that shortC currently performs:
  - F -> `if(`
  - G -> `getchar()`
  - H -> `switch(`
- - J -> `puts(`
  - I -> `int `
+ - J -> `puts(`
  - L -> `long `
  - M -> `strcmp(`
  - O -> `for(`
