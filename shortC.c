@@ -1,142 +1,83 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-int curly = 0;
+int curly, parens;
 
-void parse_print(char *s);
+struct {
+    char c, *s;
+} mapping[] = {
+'A',"int main(int argc, char **argv){",
+'C',"char ",
+'D',"#define ",
+'E'," else ",
+'F',"if(",
+'G',"getchar()",
+'H',"switch(",
+'J',"puts(",
+'I',"int ",
+'L',"long ",
+'M',"strcmp(",
+'O',"for(",
+'P',"putchar(",
+'Q',"gets(",
+'R',"printf(",
+'S',"strlen(",
+'T',"return ",
+'U',"usleep(",
+'W',"while(",
+'X',"while(1){"
+};
 
-int chr_eq(int c, char *s)
+void translate(char c)
 {
-    int i, l = strlen(s);
-    for (i = 0; i < l; i++)
-        if (s[i] == c)
-            return 1;
-
-    return 0;
+    int i;
+    for (i = 0; mapping[i].s; i++) {
+         if (mapping[i].c == c) {
+             printf("%s",mapping[i].s);
+             if (strchr(mapping[i].s,'{'))
+                 curly++;
+             else if (strchr(mapping[i].s,'}'))
+                 curly--;
+             else if (strchr(mapping[i].s,'('))
+                 parens++;
+             else if (strchr(mapping[i].s,')'))
+                 parens--;
+         }
+    }
 }
 
-#ifdef DECODE
-void parse_print(char *s)
+void autoclose(void)
 {
-    if (!strcmp(s, "I"))
-        printf("int");
-    else if (!strcmp(s, "C"))
-        printf("char");
-    else if (!strcmp(s, "V"))
-        printf("void");
-    else if (!strcmp(s, "E"))
-        printf("else");
-    else if (!strcmp(s, "F"))
-        printf("if");
-    else if (!strcmp(s, "R"))
-        printf("printf");
-    else if (!strcmp(s, "P"))
-        printf("putchar");
-    else if (!strcmp(s, "G"))
-        printf("getchar");
-    else if (!strcmp(s, "O"))
-        printf("for");
-    else if (!strcmp(s, "W"))
-        printf("while");
-    else if (!strcmp(s, "H"))
-        printf("switch");
-    else if (!strcmp(s, "M"))
-        printf("strcmp");
-    else if (!strcmp(s, "D"))
-        printf("#define");
-    else if (!strcmp(s, "U"))
-        printf("usleep");
-    else if (!strcmp(s, "L"))
-        printf("long");
-    else if (!strcmp(s, "S"))
-        printf("strlen");
-    else if (!strcmp(s, "T"))
-        printf("return");
-    else if (!strcmp(s, "Q"))
-        printf("gets");
-    else if (!strcmp(s, "A"))
-        printf("main");
-    else if (!strcmp(s, "X"))
-        printf("while(1)");
-    else if (!strcmp(s, "J"))
-        printf("puts");
-    else
-        printf("%s",s);
+//    while (parens--)
+//        putchar(')');
+
+    if (!--curly)
+        putchar(';');
 }
-#endif
 
 int main(void)
 {
-    char token[100] = {0};
-    int i = 0, c = 0;
-
-    while ((c = getchar()) != EOF) {
-        if (isalnum(c) || c == '_' || c == '#' || c == '"' || c == '\'') {
-            token[i++] = c;
-        }
+    int c, prev, chr, str;
+    c = prev = chr = str = curly = parens = 0;
+    while ((c = getchar()) != EOF)
+    {
+        if (isupper(c) && !str && !chr)
+            translate(c);
         else {
-            i = 0;
-            if (strlen(token))
-                parse_print(token);
-            if (c == '{')
+            if (c == '"' && prev != '\\')
+                str = !str;
+            else if (c == '\'' && prev != '\\')
+                chr = !chr;
+            else if (c == '(')
+                parens++;
+            else if (c == ')')
+                parens--;
+            else if (c == '{')
                 curly++;
             else if (c == '}')
-                if (!--curly)
-                    putchar(';');
+                autoclose();
             putchar(c);
-            memset(token,0,100);
         }
+        prev = c;
     }
-
-    return 0;
 }
-
-
-#ifdef ENCODE
-void parse_print(char *s)
-{
-    if (!strcmp(s, "int"))
-        putchar('I');
-    else if (!strcmp(s, "char"))
-        putchar('C');
-    else if (!strcmp(s, "void"))
-        putchar('V');
-    else if (!strcmp(s, "else"))
-        putchar('E');
-    else if (!strcmp(s, "if"))
-        putchar('F');
-    else if (!strcmp(s, "printf"))
-        putchar('R');
-    else if (!strcmp(s, "putchar"))
-        putchar('P');
-    else if (!strcmp(s, "getchar"))
-        putchar('G');
-    else if (!strcmp(s, "for"))
-        putchar('O');
-    else if (!strcmp(s, "while"))
-        putchar('W');
-    else if (!strcmp(s, "switch"))
-        putchar('H');
-    else if (!strcmp(s, "strcmp"))
-        putchar('M');
-    else if (!strcmp(s, "#define"))
-        putchar('D');
-    else if (!strcmp(s, "usleep"))
-        putchar('U');
-    else if (!strcmp(s, "long"))
-        putchar('L');
-    else if (!strcmp(s, "strlen"))
-        putchar('S');
-    else if (!strcmp(s, "return"))
-        putchar('T');
-    else if (!strcmp(s, "gets"))
-        putchar('Q');
-    else if (!strcmp(s, "main"))
-        putchar('A');
-    else if (!strcmp(s, "puts"))
-        putchar('P');
-    else
-        printf("%s",s);
-}
-#endif
