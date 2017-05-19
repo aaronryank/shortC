@@ -5,6 +5,8 @@ To build the 'interpreter', type `make`.
 
 To compile a shortC program, type `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c && gcc CSOURCEFILE.c`.
 
+shortC automatically inserts closing quotes, closing double-quotes, final semicolon and closing curly-braces. It also auto-inserts a semicolon before a function-closing curly-brace.
+
 Here are the conversions that shortC currently performs:
 
  - A -> `int main(int argc, char **argv){`
