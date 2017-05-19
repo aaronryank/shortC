@@ -2,6 +2,8 @@
 #include <string.h>
 #include <ctype.h>
 
+int curly = 0;
+
 void parse_print(char *s);
 
 int chr_eq(int c, char *s)
@@ -77,6 +79,11 @@ int main(void)
             i = 0;
             if (strlen(token))
                 parse_print(token);
+            if (c == '{')
+                curly++;
+            else if (c == '}')
+                if (!--curly)
+                    putchar(';');
             putchar(c);
             memset(token,0,100);
         }
