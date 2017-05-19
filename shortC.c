@@ -4,9 +4,8 @@
 /* curly-braces, parenthesis, preprocessor */
 int curly, parens, pre;
 
-struct {
-    char c, *s;
-} mapping[] = {
+/* shortened codes */
+struct { char c, *s; } mapping[] = {
 'A',"int main(int argc, char **argv){",
 'C',"char ",
 'D',"#define ",
@@ -29,6 +28,7 @@ struct {
 'X',"while(1){"
 };
 
+/* shortify */
 void translate(char c)
 {
     int i;
@@ -49,6 +49,7 @@ void translate(char c)
     }
 }
 
+/* auto-insert parenthesis and semicolons */
 void autoclose(void)
 {
     if (parens > 0)
@@ -65,9 +66,11 @@ int main(void)
     c = prev = chr = str = curly = parens = pre = 0;
     while ((c = getchar()) != EOF)
     {
+        /* if uppercase and not in a string/char, shortify */
         if (isupper(c) && !str && !chr)
             translate(c);
         else {
+            /* swap char/string flags */
             if (c == '"' && prev != '\\' && !chr)
                 str = !str;
             else if (c == '\'' && prev != '\\' && !str)
@@ -81,6 +84,7 @@ int main(void)
             else if (c == '}')
                 autoclose();
 
+            /* print newline and swap preprocessor flag if preprocessor flag is 1 */
             if (c == '\n') {
                 if (pre) {
                     pre = 0;
@@ -93,12 +97,17 @@ int main(void)
         prev = c;
     }
 
+    /* close quotes */
     if (chr)
         putchar('\'');
     else if (str)
         putchar('\"');
 
+    /* close braces and auto-insert remaining characters */
     if (curly > 0)
-        while (curly)
+        while (curly)  /* autoclose decrements curly */
             autoclose(), putchar('}');
+
+    /* prettiness */
+    putchar('\n');
 }

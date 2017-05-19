@@ -1,11 +1,11 @@
 # shortC
 shortC is a "programming language" for code golfing. Frequently-used C functions/keywords are shortened into capital letters.
 
-To build the 'interpreter', type `make`.
+Command to build the "interpreter": `make`.
 
-To compile a shortC program, type `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c && gcc CSOURCEFILE.c`.
+Command to compile a shortC program: `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.c && gcc CSOURCEFILE.c`.
 
-shortC automatically inserts closing quotes, closing double-quotes, final semicolon and closing curly-braces. It also auto-inserts a semicolon before a function-closing curly-brace.
+shortC automatically inserts closing quotes, closing double-quotes, final semicolon and closing curly-braces. It also auto-inserts a semicolon before each final closing curly-brace.
 
 Here are the conversions that shortC currently performs:
 
