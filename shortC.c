@@ -25,7 +25,8 @@ struct { char c, *s; } mapping[] = {
 'T',"return ",
 'U',"usleep(",
 'W',"while(",
-'X',"while(1){"
+'X',"while(1){",
+'$',"system("
 };
 
 /* shortify */
