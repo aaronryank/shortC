@@ -38,13 +38,13 @@ void translate(char c)
              printf("%s",mapping[i].s);
              if (strchr(mapping[i].s,'{'))
                  curly++;
-             else if (strchr(mapping[i].s,'}'))
+             if (strchr(mapping[i].s,'}'))
                  curly--;
-             else if (strchr(mapping[i].s,'('))
+             if (strchr(mapping[i].s,'('))
                  parens++;
-             else if (strchr(mapping[i].s,')'))
+             if (strchr(mapping[i].s,')'))
                  parens--;
-             else if (strchr(mapping[i].s,'#'))
+             if (strchr(mapping[i].s,'#'))
                  pre = 1;
          }
     }
