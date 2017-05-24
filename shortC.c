@@ -7,6 +7,7 @@ int curly, parens, pre;
 /* shortened codes */
 struct { char c, *s; } mapping[] = {
 'A',"int main(int argc, char **argv){",
+'B',"int main(",
 'C',"char ",
 'D',"#define ",
 'E'," else ",
