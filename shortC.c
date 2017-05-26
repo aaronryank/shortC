@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+
+#pragma GCC diagnostic ignored "-Wmissing-braces"
 
 /* curly-braces, parenthesis, preprocessor */
 int curly, parens, pre;
@@ -113,4 +116,6 @@ int main(void)
 
     /* prettiness */
     putchar('\n');
+
+    return 0;
 }
