@@ -27,7 +27,8 @@ struct { char c, *s; } mapping[] = {
 'U',"usleep(",
 'W',"while(",
 'X',"while(1){",
-'$',"system("
+'$',"system(",
+'@',"argv["
 };
 
 /* shortify */
@@ -77,13 +78,13 @@ int main(void)
                 str = !str;
             else if (c == '\'' && prev != '\\' && !str)
                 chr = !chr;
-            else if (c == '(')
+            else if (c == '(' && !chr && !str)
                 parens++;
-            else if (c == ')')
+            else if (c == ')' && !chr && !str)
                 parens--;
-            else if (c == '{')
+            else if (c == '{' && !chr && !str)
                 curly++;
-            else if (c == '}')
+            else if (c == '}' && !chr && !str)
                 autoclose();
 
             /* print newline and swap preprocessor flag if preprocessor flag is 1 */

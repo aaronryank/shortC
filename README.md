@@ -10,7 +10,7 @@ shortC automatically inserts closing quotes, closing double-quotes, final semico
 Here are the conversions that shortC currently performs:
 
  - `A` -> `int main(int argc, char **argv){`
- - 'B' -> 'int main('
+ - `B` -> `int main(`
  - `C` -> `char `
  - `D` -> `#define `
  - `E` -> ` else `
@@ -31,5 +31,6 @@ Here are the conversions that shortC currently performs:
  - `W` -> `while(`
  - `X` -> `while(1){`
  - `$` -> `system(`
+ - `@` -> `argv[`
 
 To suggest conversions, email rkcoder2002+shortC@gmail.com or ping me `@MDXF` on [PPCG SE](//codegolf.stackexchange.com).
