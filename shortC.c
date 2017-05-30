@@ -31,7 +31,7 @@ struct { char c, *s; } mapping[] = {
 'W',"while(",
 'X',"while(1){",
 '$',"system(",
-'@',"argv["
+'@',"argv"
 };
 
 /* shortify */
@@ -73,7 +73,7 @@ int main(void)
     while ((c = getchar()) != EOF)
     {
         /* if uppercase and not in a string/char, shortify */
-        if (isupper(c) && !str && !chr)
+        if ((isupper(c) || c == '@') && !str && !chr)
             translate(c);
         else {
             /* swap char/string flags */

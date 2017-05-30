@@ -31,6 +31,6 @@ Here are the conversions that shortC currently performs:
  - `W` -> `while(`
  - `X` -> `while(1){`
  - `$` -> `system(`
- - `@` -> `argv[`
+ - `@` -> `argv`
 
 To suggest conversions, email rkcoder2002+shortC@gmail.com or ping me `@MDXF` on [PPCG SE](//codegolf.stackexchange.com).
