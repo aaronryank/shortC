@@ -30,6 +30,7 @@ struct { char c, *s; } mapping[] = {
 'U',"usleep(",
 'W',"while(",
 'X',"while(1){",
+'Z',"srand(time(0));",
 '$',"system(",
 '@',"argv"
 };

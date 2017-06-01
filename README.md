@@ -30,6 +30,7 @@ Here are the conversions that shortC currently performs:
  - `U` -> `usleep(`
  - `W` -> `while(`
  - `X` -> `while(1){`
+ - `Z` -> `srand(time(0));`
  - `$` -> `system(`
  - `@` -> `argv`
 
