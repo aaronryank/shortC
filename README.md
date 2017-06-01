@@ -7,6 +7,8 @@ Command to compile a shortC program: `./shortC <SHORTSOURCEFILE.sc >CSOURCEFILE.
 
 shortC automatically inserts closing quotes, closing double-quotes, final semicolon and closing curly-braces. It also auto-inserts a semicolon before each final closing curly-brace.
 
+[Try it online!](https://tio.run/#shortC)
+
 Here are the conversions that shortC currently performs:
 
  - `A` -> `int main(int argc, char **argv){`
@@ -33,5 +35,6 @@ Here are the conversions that shortC currently performs:
  - `Z` -> `srand(time(0));`
  - `$` -> `system(`
  - `@` -> `argv`
+ - ``` -> `rand()`
 
 To suggest conversions, email rkcoder2002+shortC@gmail.com or ping me `@MDXF` on [PPCG SE](//codegolf.stackexchange.com).
