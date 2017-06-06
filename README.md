@@ -35,6 +35,6 @@ Here are the conversions that shortC currently performs:
  - `Z` -> `srand(time(0));`
  - `$` -> `system(`
  - `@` -> `argv`
- - ``` -> `rand()`
+ - `` ` `` -> `rand()`
 
 To suggest conversions, email rkcoder2002+shortC@gmail.com or ping me `@MDXF` on [PPCG SE](//codegolf.stackexchange.com).
