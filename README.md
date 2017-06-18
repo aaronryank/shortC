@@ -23,6 +23,7 @@ Here are the conversions that shortC currently performs:
  - `J` -> `puts(`
  - `L` -> `long `
  - `M` -> `strcmp(`
+ - `N` -> `stdin`
  - `O` -> `for(`
  - `P` -> `putchar(`
  - `Q` -> `gets(`
@@ -32,6 +33,7 @@ Here are the conversions that shortC currently performs:
  - `U` -> `usleep(`
  - `W` -> `while(`
  - `X` -> `while(1){`
+ - `Y` -> `fgets(`
  - `Z` -> `srand(time(0));`
  - `$` -> `system(`
  - `@` -> `argv`
