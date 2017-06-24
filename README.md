@@ -19,7 +19,6 @@ Here are the conversions that shortC currently performs:
  - `F` -> `if(`
  - `G` -> `getchar()`
  - `H` -> `switch(`
- - `I` -> `int `
  - `J` -> `puts(`
  - `L` -> `long `
  - `M` -> `strcmp(`
@@ -39,4 +38,11 @@ Here are the conversions that shortC currently performs:
  - `@` -> `argv`
  - `` ` `` -> `rand()`
 
-To suggest conversions, email rkcoder2002+shortC@gmail.com or ping me `@MDXF` on [PPCG SE](//codegolf.stackexchange.com).
+Remaining characters:
+
+ - `K`
+ - `V`
+ - `I` (implemented as `int`, but that's useless)
+ - `\` (this will never be used in golfing)
+ - `#` (`D` already does `#define`)
+ - `_` (maybe. not an operator nor used in any standard library functions)
