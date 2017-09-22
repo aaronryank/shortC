@@ -36,6 +36,7 @@ struct { char c, *s; } mapping[] = {
 '$',"system(",
 '@',"argv",
 '`',"rand()",
+'_',"argc"
 };
 
 /* shortify */
@@ -77,7 +78,7 @@ int main(void)
     while ((c = getchar()) != EOF)
     {
         /* if uppercase and not in a string/char, shortify */
-        if ((isupper(c) || c == '@' || c == '$' || c == '`') && !str && !chr)
+        if ((isupper(c) || c == '@' || c == '$' || c == '`' || c == '_') && !str && !chr)
             translate(c);
         else {
             /* swap char/string flags */
