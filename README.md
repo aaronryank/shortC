@@ -3,7 +3,7 @@ shortC is a "programming language" for code golfing. Frequently-used C functions
 
 Build the "interpreter": `make`.
 
-Compile a shortC program: `./shortC <source >outc && gcc out.c`.
+Compile a shortC program: `./shortC <source >out.c && gcc out.c`.
 
 shortC automatically inserts closing quotes, closing double-quotes, final semicolon and closing curly-braces. It also auto-inserts a semicolon before each final closing curly-brace.
 
