@@ -20,7 +20,6 @@ Here are the conversions that shortC currently performs:
  - `G` -> `getchar()`
  - `H` -> `switch(`
  - `J` -> `puts(`
- - `L` -> `long `
  - `M` -> `strcmp(`
  - `N` -> `stdin`
  - `O` -> `for(`
