@@ -19,7 +19,6 @@ struct { char c, *s; } mapping[] = {
 'H',"switch(",
 'J',"puts(",
 'I',"int ",
-'L',"long ",
 'M',"strcmp(",
 'N',"stdin",
 'O',"for(",
