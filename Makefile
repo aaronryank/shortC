@@ -1,2 +1,2 @@
 all:
-	gcc -Wall -Wextra -Werror -ansi -pedantic -O3 short.c -o shortC
+	gcc short.c -o short -lm -Wall
