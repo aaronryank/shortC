@@ -52,7 +52,7 @@ struct { char c, *s; } mapping[] = {
 'ÿ'," 42 ",
 'µ'," int f(int n){",
 '¸',"-=",
-'±'," posneg(",
+'±'," sign(",
 'ì'," input()",
 '¯'," prime(",
 'í'," printf(\"%d\",",
@@ -116,7 +116,8 @@ int main(int argc, char **argv)
     }
 
     if (!argv[1] || !strchr(argv[1],'n')) {
-        puts("int posneg(x){return x < 0 ? -1 : x == 0 ? 0 : 1;}");
+        puts("#include <math.h>");
+        puts("int sign(int x){return x < 0 ? -1 : x == 0 ? 0 : 1;}");
         puts("int prime(int x){if (x < 2) return 0; int ii; for (ii = sqrt(x); ii > 1; ii--) if (!(x % ii)) return 0; return 1;}");
         puts("int input(void){int x; scanf(\"%d\",&x); return x;}");
     }
