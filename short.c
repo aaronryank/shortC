@@ -110,7 +110,7 @@ int main(int argc, char **argv)
         printf("Usage: shortc -hn\n"                                 \
                "Flags:         h  | Display help and exit\n"         \
                "                n | No default functions\n"          \
-               "short.c, copyright (c) 2017 MD XF Productions\n");
+               "short.c, copyright (c) 2017 MD XF Technologies\n");
 
         return 0;
     }
@@ -126,33 +126,33 @@ int main(int argc, char **argv)
     while ((c = getchar()) != EOF)
     {
         /* if uppercase and not in a string/char, shortify */
-        if (!translate(c))
-        {
-            /* swap char/string flags */
-            if (c == '"' && prev != '\\' && !chr)
-                str = !str;
-            else if (c == '\'' && prev != '\\' && !str)
-                chr = !chr;
-            else if (c == '(' && !chr && !str)
-                parens++;
-            else if (c == ')' && !chr && !str)
-                parens--;
-            else if (c == '{' && !chr && !str)
-                curly++;
-            else if (c == '}' && !chr && !str)
-                autoclose();
+        if (!str && !chr)
+            if (translate(c))
+                continue;
+        /* swap char/string flags */
+        if (c == '"' && prev != '\\' && !chr)
+            str = !str;
+        else if (c == '\'' && prev != '\\' && !str)
+            chr = !chr;
+        else if (c == '(' && !chr && !str)
+            parens++;
+        else if (c == ')' && !chr && !str)
+            parens--;
+        else if (c == '{' && !chr && !str)
+            curly++;
+        else if (c == '}' && !chr && !str)
+            autoclose();
 
-            /* print newline and swap preprocessor flag if preprocessor flag is 1 */
-            if (c == '\n' && prev != '\\')
-                pre = 0;
+        /* print newline and swap preprocessor flag if preprocessor flag is 1 */
+        if (c == '\n' && prev != '\\')
+            pre = 0;
 
-            /* print closing ' if not present */
-            if (chr && prev != '\'' && c != '\'') {
-                chr = 0;
-                putchar('\'');
-            }
-            putchar(c);
+        /* print closing ' if not present */
+        if (chr && prev != '\'' && c != '\'') {
+            chr = 0;
+            putchar('\'');
         }
+        putchar(c);
         prev = c;
     }
 
