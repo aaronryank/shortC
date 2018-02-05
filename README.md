@@ -1,5 +1,5 @@
 # shortC
-shortC is a "programming language" for code golfing. Frequently-used C functions/keywords are shortened into capital letters.
+shortC is a "programming language" for code golfing. Frequently-used C functions/keywords are shortened into capital letters and Unicode things.
 
 Build the "interpreter": `make`.
 
