@@ -1,2 +1,2 @@
 all:
-	gcc short.c -o short -lm -Wall
+	gcc short.c -o short -lm -w
