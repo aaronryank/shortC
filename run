@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cpp -P - | head -c -1 | $(dirname "$0")/short
+cpp -P -w - | head -c -1 | $(dirname "$0")/short

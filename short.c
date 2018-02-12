@@ -8,7 +8,7 @@
 int curly, parens, pre;
 
 /* shortened codes */
-struct { char c, *s; } mapping[] = {
+struct { int c; char *s; } mapping[] = {
 'A',"int main(int argc, char **argv){",
 'B',"int main(",
 'C'," char ",
@@ -65,7 +65,7 @@ struct { char c, *s; } mapping[] = {
 'ß',"=strdup(\"",
 '©',"\");",
 'Þ'," int c;while((c = getchar())!=EOF){",
-'Ø',"strcat(",
+'Ø'," strcat(",
 '¶'," fgets(s,1000,stdin);"
 };
 

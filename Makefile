@@ -1,2 +1,2 @@
 all:
-	gcc short.c -o short -lm -w
+	gcc short.c -o short -lm
