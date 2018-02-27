@@ -20,6 +20,7 @@ Here are the conversions that shortC currently performs:
  - `G` -> `getchar()`
  - `H` -> `switch(`
  - `J` -> `puts(`
+ - `K` -> `int (*f)() = "`
  - `M` -> `strcmp(`
  - `N` -> `stdin`
  - `O` -> `for(`
@@ -30,6 +31,7 @@ Here are the conversions that shortC currently performs:
  - `T` -> `return `
  - `U` -> `usleep(`
  - `W` -> `while(`
+ - `V` -> `goto*&`
  - `X` -> `while(1){`
  - `Y` -> `fgets(`
  - `Z` -> `srand(time(0));`
