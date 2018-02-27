@@ -19,8 +19,9 @@ Here are the conversions that shortC currently performs:
  - `F` -> `if(`
  - `G` -> `getchar()`
  - `H` -> `switch(`
+ - `I` -> `int`
  - `J` -> `puts(`
- - `K` -> `int (*f)() = "`
+ - `K` -> `scanf(`
  - `M` -> `strcmp(`
  - `N` -> `stdin`
  - `O` -> `for(`
@@ -38,12 +39,10 @@ Here are the conversions that shortC currently performs:
  - `$` -> `system(`
  - `@` -> `argv`
  - `` ` `` -> `rand()`
+ - `` \ `` -> `int (*f)() = "`
 
 Remaining characters:
 
- - `K`
- - `V`
- - `I` (implemented as `int`, but that's useless)
  - `\` (this will never be used in golfing)
  - `#` (`D` already does `#define`)
  - `_` (maybe. not an operator nor used in any standard library functions)
