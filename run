@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-$(dirname "$0")/decomment | head -c -1 | $(dirname "$0")/short
+sed -e '$a\' | $(dirname "$0")/decomment | head -c -1 | $(dirname "$0")/short
