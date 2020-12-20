@@ -3,6 +3,8 @@
 $/ = undef;   # no line delimiter
 $_ = <>;   # read entire file
 
+s!\\\n!!g;   # handle line continuations
+
 s! ((['"]) (?: \\. | .)*? \2) | # skip quoted strings
    /\* .*? \*/ |  # delete C comments
    // [^\n\r]*   # delete C++ comments
